@@ -20,7 +20,7 @@ VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases |
     cut -d ":" -f2 |
     sed 's/\"//g;s/\,//g;s/\ //g;s/v//' |
     head -n 1)
-CURRENT=$(sing-box version | grep "sing-box version" | awk '{print $3}')
+CURRENT=$(/usr/bin/sing-box version | grep "sing-box version" | awk '{print $3}')
 
 if [ "$VERSION" = "$CURRENT" ]; then
     curl -Lo sing-box.deb "https://github.com/SagerNet/sing-box/releases/download/v${VERSION}/sing-box_${VERSION}_linux_${ARCH}.deb"
