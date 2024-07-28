@@ -15,7 +15,7 @@ case "${ARCH_RAW}" in
     ;;
 esac
 
-VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest |
+VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases |
     grep tag_name |
     cut -d ":" -f2 |
     sed 's/\"//g;s/\,//g;s/\ //g;s/v//' |
