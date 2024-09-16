@@ -5,7 +5,7 @@ VERSION=$(curl -s https://api.github.com/repos/alist-org/alist/releases/latest |
     cut -d ":" -f2 |
     sed 's/\"//g;s/\,//g;s/\ //g;s/v//' |
     head -n 1)
-CURRENT=$(/home/alist/alist version | grep "Version: v" | awk '{print $2}')
+CURRENT=$(/home/alist/alist version | grep "^Version:" | awk '{print $2}')
 
 if [ "v$VERSION" = "$CURRENT" ]; then
     echo "no need to upgrade"
