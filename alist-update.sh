@@ -10,5 +10,5 @@ CURRENT=$(/home/alist/alist version | grep "^Version:" | awk '{print $2}')
 if [ "v$VERSION" = "$CURRENT" ]; then
     echo "no need to upgrade"
 else
-    curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s update /home
+    curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s update
 fi
